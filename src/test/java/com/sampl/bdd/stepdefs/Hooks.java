@@ -26,7 +26,7 @@ public class Hooks {
 	@Before("@chrome")
 	public void beforeChrome() {
 		System.out.println("Before Chrome");
-		userActions.launchApplication("https://google.com", BrowserType.Chrome);
+		userActions.launchApplication("https://google.com", BrowserType.GRID_CHROME);
 	}
 	
 	@After("@chrome")
