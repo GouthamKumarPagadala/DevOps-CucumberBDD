@@ -14,15 +14,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UserActions {
 
-
 	WebDriver driver;
 
-	
-	public void launchApplication(String url,BrowserType browser) {
-		switch(browser) {
+	public void launchApplication(String url, BrowserType browser) {
+		switch (browser) {
 		case Chrome:
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("disable-dev-shm-usage");
+			options.addArguments("--headless");
+			driver = new ChromeDriver(options);
 			break;
 		case Firefox:
 			WebDriverManager.firefoxdriver().setup();
@@ -31,16 +33,16 @@ public class UserActions {
 		case GRID_CHROME:
 			try {
 				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), new ChromeOptions());
-			}catch(Exception e) {
+			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-			 
+
 		default:
 			break;
 		}
 		driver.get(url);
 	}
-	
+
 	public void quit() {
 		driver.quit();
 	}
