@@ -19,7 +19,7 @@ public class UserActions {
 	public void launchApplication(String url, BrowserType browser) {
 		switch (browser) {
 		case Chrome:
-			WebDriverManager.chromedriver().browserVersion("73.0.3683.75").setup();
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox");
 			options.addArguments("disable-dev-shm-usage");

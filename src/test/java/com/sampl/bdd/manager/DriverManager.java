@@ -23,7 +23,7 @@ public class DriverManager {
 	public void launchDriver(BrowserType browser) {
 		switch(browser) {
 		case Chrome:
-			WebDriverManager.chromedriver().browserVersion("73.0.3683.75").setup();
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
 		case Firefox:
