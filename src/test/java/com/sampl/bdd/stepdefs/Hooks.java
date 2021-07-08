@@ -1,6 +1,7 @@
 package com.sampl.bdd.stepdefs;
 
 import com.sampl.bdd.enumerations.BrowserType;
+import com.sampl.bdd.junit.RunCucumberChrome;
 import com.sampl.bdd.manager.UserActions;
 
 import io.cucumber.java.After;
@@ -26,7 +27,12 @@ public class Hooks {
 	@Before("@chrome")
 	public void beforeChrome() {
 		System.out.println("Before Chrome");
-		userActions.launchApplication("https://google.com", BrowserType.GRID_CHROME);
+		if(RunCucumberChrome.useGrid) {
+			userActions.launchApplication("https://google.com", BrowserType.GRID_CHROME);
+		}else {
+			userActions.launchApplication("https://google.com", BrowserType.Chrome);
+		}
+
 	}
 	
 	@After("@chrome")

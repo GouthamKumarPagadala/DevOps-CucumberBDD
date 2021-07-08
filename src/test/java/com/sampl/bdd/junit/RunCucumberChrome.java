@@ -16,5 +16,6 @@ import org.slf4j.LoggerFactory;
 public class RunCucumberChrome {
 
 	static Logger LOGGER = LoggerFactory.getLogger(RunCucumberChrome.class);
+	public static boolean useGrid = false;
 	
 }
