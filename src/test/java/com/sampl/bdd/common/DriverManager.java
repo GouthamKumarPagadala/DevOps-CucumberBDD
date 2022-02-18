@@ -1,4 +1,4 @@
-package com.sampl.bdd.manager;
+package com.sampl.bdd.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

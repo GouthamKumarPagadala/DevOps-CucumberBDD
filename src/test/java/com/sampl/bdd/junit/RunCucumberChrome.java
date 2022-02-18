@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		glue={"com.sampl.bdd.manager","com.sampl.bdd.stepdefs"},
-		plugin = { "pretty" ,"json:target/results.json"},
+		plugin = { "pretty" ,"json:target/results.json","html:target/report.html"},
 		features = "classpath:Features/",
 		monochrome = true)
 public class RunCucumberChrome {

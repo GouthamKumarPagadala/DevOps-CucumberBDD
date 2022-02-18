@@ -19,10 +19,22 @@
 		<junit.version>4.13.1</junit.version>
 		<selenium-java.version>3.141.59</selenium-java.version>
 		<webdriver-manager.version>4.2.2</webdriver-manager.version>
+		<aspectj.version>1.8.10</aspectj.version>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>io.github.prashant-ramcharan</groupId>
+			<artifactId>courgette-jvm</artifactId>
+			<version>5.11.0</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.qameta.allure</groupId>-->
+<!--			<artifactId>allure-junit4</artifactId>-->
+<!--			<version>${aspectj.version}</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>

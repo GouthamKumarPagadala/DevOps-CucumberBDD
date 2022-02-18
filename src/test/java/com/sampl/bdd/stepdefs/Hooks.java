@@ -1,15 +1,18 @@
 package com.sampl.bdd.stepdefs;
 
+import com.sampl.bdd.common.UserActions;
 import com.sampl.bdd.enumerations.BrowserType;
 import com.sampl.bdd.junit.RunCucumberChrome;
-import com.sampl.bdd.manager.UserActions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hooks {
 
 	UserActions userActions;
+	
+	public static Scenario scenario;
 	
 	public Hooks() {
 	}
@@ -19,10 +22,7 @@ public class Hooks {
 		this.userActions = userActions;
 	}
 
-	@Before
-	public void before() {
-		System.out.println("Before");
-	}
+	
 	
 	@Before("@chrome")
 	public void beforeChrome() {
